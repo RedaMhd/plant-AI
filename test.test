@@ -1,0 +1,27 @@
+PLANIT-AI/
+│
+├── index.html
+├── new-project.html
+├── project.html
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   ├── main.js
+│   ├── ui.js
+│   ├── state.js
+│   ├── storage.js
+│   ├── api.js
+│   ├── prompt.js
+│   ├── validation.js
+│   └── utils.js
+│
+├── data/
+│   └── sample-plan.json
+│
+├── ressources/
+│   └── prompt.txt
+│
+├── .gitignore
+└── README.md

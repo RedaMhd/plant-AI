@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="icon"
+        href="https://imgs.search.brave.com/FtzJIkY_vsW0PHw6GDfOpHeXyKaTq0rnQTsFQq42R6Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTUx/MDkxNzg4NC92ZWN0/b3IvY2FtZXJhLWlj/b24taXNvbGF0ZWQt/b24tdHJhbnNwYXJl/bnQtYmFja2dyb3Vu/ZC1lYXNpbHktZWRp/dGFibGUtbGluZS1h/cnQtc3ltYm9sLWZv/ci1kZXNpZ24uanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPU8z/Q2ttdVQzMmFWb1ZF/LVVKYjRFOGVKU05w/MGUtMlB3VjRtWTB6/VEpwZEk9">
+
+</head>
+
+<body class="text-3xl ">
+    <header class="flex md:justify-evenly justify-between px-3 h-[] bg-blue-950 text-gray-500 text-[140%]">
+        <img src="./images/hamburger.png" id="hum" alt="hamburger menu" class="md:w-0 w-auto h-10 my-auto">
+        <a href="#" class="my-auto md:w-[15%] w-[35%] p-0 "><img src="./images/planit_ai_all_white.png" alt=""></a>
+        <nav
+            class="md:flex md:justify-between gap-5 my-auto p-2 absolute md:static flex flex-col md:flex-row md:w-auto md:bg-transparent rounded-xl mt-4 w-[93%] bg-sky-950 hidden">
+            <button class="mx-auto pl-[80%] text-3xl font-black text-black md:hidden" id="x">X</button>
+            <a class="hover:text-gray-50 border border-gray-500 hover:border-amber-50 p-2 md:mx-5 mx-[10%] text-center rounded-xl"
+                href="#">Dashboard</a>
+            <a class="hover:text-gray-50 border border-gray-500 hover:border-amber-50 p-2 md:mx-5 mx-[10%] text-center rounded-xl"
+                href="new-project.html">Nouveau projet</a>
+        </nav>
+        <div class="flex md:justify-between md:gap-5 flex-col md:flex-row">
+            <button
+                class="bg-sky-600 rounded-xl text-amber-300 hover:bg-sky-800 md:hover:text-amber-300 px-3 md:my-3 my-[2%] md:w-[130%]">+
+                Creat</button>
+            <button
+                class="bg-sky-600 rounded-xl text-gray-50 hover:bg-sky-800 px-3 md:my-3 my-[2%] md:w-[130%]">Paramètres</button>
+        </div>
+    </header>
+
+    <main class="min-h-[90vh] flex">
+        <div class="no-project m-auto w-[90%] hidden">
+            <h1>Aucun projet pour le moment, créez-en un pour générer votre premier plan.</h1>
+            <button
+                class="bg-sky-600 rounded-xl text-amber-300 hover:bg-sky-800 md:hover:text-amber-300 px-3 md:my-3 my-[2%] md:w-[20%]">
+                + Creat
+            </button>
+        </div>
+        <div class="carts grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg-grid-cols-4 gap-1 w-full m-2">
+            <div class="bg-blue-950 col-span-1 row-span-1">
+                <h1>Project Name</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
+                    commodi beatae provident optio temporibus harum culpa!
+                </p>
+                <h2>total Tasks : 20</h2>
+                <p>
+                    <h3>done : 16</h3>
+                    <h3>not yet :4</h3>
+                </p>
+            </div>
+            <div class="bg-blue-950 col-span-1 row-span-1">
+                <h1>Project Name</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
+                    commodi beatae provident optio temporibus harum culpa!
+                </p>
+                <h2>total Tasks : 20</h2>
+                <p>
+                <h3>done : 16</h3>
+                <h3>not yet :4</h3>
+                </p>
+            </div>
+            <div class="bg-blue-950 col-span-1 row-span-1">
+                <h1>Project Name</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
+                    commodi beatae provident optio temporibus harum culpa!
+                </p>
+                <h2>total Tasks : 20</h2>
+                <p>
+                <h3>done : 16</h3>
+                <h3>not yet :4</h3>
+                </p>
+            </div>
+            <div class="bg-blue-950 col-span-1 row-span-1">
+                <h1>Project Name</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
+                    commodi beatae provident optio temporibus harum culpa!
+                </p>
+                <h2>total Tasks : 20</h2>
+                <p>
+                <h3>done : 16</h3>
+                <h3>not yet :4</h3>
+                </p>
+            </div>
+            <div class="bg-blue-950 col-span-1 row-span-1">
+                <h1>Project Name</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
+                    commodi beatae provident optio temporibus harum culpa!
+                </p>
+                <h2>total Tasks : 20</h2>
+                <p>
+                <h3>done : 16</h3>
+                <h3>not yet :4</h3>
+                </p>
+            </div>
+            <div class="bg-blue-950 col-span-1 row-span-1">
+                <h1>Project Name</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
+                    commodi beatae provident optio temporibus harum culpa!
+                </p>
+                <h2>total Tasks : 20</h2>
+                <p>
+                <h3>done : 16</h3>
+                <h3>not yet :4</h3>
+                </p>
+            </div>
+            <div class="bg-blue-950 col-span-1 row-span-1">
+                <h1>Project Name</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
+                    commodi beatae provident optio temporibus harum culpa!
+                </p>
+                <h2>total Tasks : 20</h2>
+                <p>
+                <h3>done : 16</h3>
+                <h3>not yet :4</h3>
+                </p>
+            </div>
+            <div class="bg-blue-950 col-span-1 row-span-1">
+                <h1>Project Name</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
+                    commodi beatae provident optio temporibus harum culpa!
+                </p>
+                <h2>total Tasks : 20</h2>
+                <p>
+                <h3>done : 16</h3>
+                <h3>not yet :4</h3>
+                </p>
+            </div>
+            <div class="bg-blue-950 col-span-1 row-span-1">
+                <h1>Project Name</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
+                    commodi beatae provident optio temporibus harum culpa!
+                </p>
+                <h2>total Tasks : 20</h2>
+                <p>
+                <h3>done : 16</h3>
+                <h3>not yet :4</h3>
+                </p>
+            </div>
+            <div class="bg-blue-950 col-span-1 row-span-1">
+                <h1>Project Name</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
+                    commodi beatae provident optio temporibus harum culpa!
+                </p>
+                <h2>total Tasks : 20</h2>
+                <p>
+                <h3>done : 16</h3>
+                <h3>not yet :4</h3>
+                </p>
+            </div>
+            <div class="bg-blue-950 col-span-1 row-span-1">
+                <h1>Project Name</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
+                    commodi beatae provident optio temporibus harum culpa!
+                </p>
+                <h2>total Tasks : 20</h2>
+                <p>
+                <h3>done : 16</h3>
+                <h3>not yet :4</h3>
+                </p>
+            </div>
+            <div class="bg-blue-950 col-span-1 row-span-1">
+                <h1>Project Name</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
+                    commodi beatae provident optio temporibus harum culpa!
+                </p>
+                <h2>total Tasks : 20</h2>
+                <p>
+                <h3>done : 16</h3>
+                <h3>not yet :4</h3>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+    <script src="./js/main.js" type="module"></script>
+</body>
+
+</html>
