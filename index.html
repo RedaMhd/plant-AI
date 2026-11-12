@@ -11,179 +11,244 @@
 
 </head>
 
-<body class="text-3xl ">
-    <header class="flex md:justify-evenly justify-between px-3 h-[] bg-blue-950 text-gray-500 text-[140%]">
-        <img src="./images/hamburger.png" id="hum" alt="hamburger menu" class="md:w-0 w-auto h-10 my-auto">
-        <a href="#" class="my-auto md:w-[15%] w-[35%] p-0 "><img src="./images/planit_ai_all_white.png" alt=""></a>
+<body class="text-2xl md:text-[100%] bg-sky-900">
+    <header class="flex lg:justify-evenly justify-between px-3 h-[] bg-blue-950 text-gray-500 text-[140%]">
+        <img src="./images/hamburger.png" id="hum" alt="hamburger menu" class="lg:w-0 w-auto h-[2em] my-auto">
+        <a href="#" class="my-auto lg:w-[15%] md:max-w-[50%] w-full p-0 ">
+            <img src="./images/planit_ai_all_white.png" alt="">
+        </a>
         <nav
-            class="md:flex md:justify-between gap-5 my-auto p-2 absolute md:static flex flex-col md:flex-row md:w-auto md:bg-transparent rounded-xl mt-4 w-[93%] bg-sky-950 hidden">
-            <button class="mx-auto pl-[80%] text-3xl font-black text-black md:hidden" id="x">X</button>
-            <a class="hover:text-gray-50 border border-gray-500 hover:border-amber-50 p-2 md:mx-5 mx-[10%] text-center rounded-xl"
+            class="lg:flex lg:justify-between gap-5 my-auto p-2 absolute lg:static flex flex-col lg:flex-row lg:w-auto lg:bg-transparent rounded-xl mt-4 w-[93%] bg-sky-950 hidden">
+            <button class="mx-auto pl-[80%] text-3xl font-black text-black lg:hidden" id="x">X</button>
+            <a class="hover:text-gray-50 border border-gray-500 hover:border-amber-50 p-2 lg:mx-5 mx-[10%] text-center rounded-xl"
                 href="#">Dashboard</a>
-            <a class="hover:text-gray-50 border border-gray-500 hover:border-amber-50 p-2 md:mx-5 mx-[10%] text-center rounded-xl"
+            <a class="hover:text-gray-50 border border-gray-500 hover:border-amber-50 p-2 lg:mx-5 mx-[10%] text-center rounded-xl"
                 href="new-project.html">Nouveau projet</a>
         </nav>
-        <div class="flex md:justify-between md:gap-5 flex-col md:flex-row">
+        <div class="flex lg:justify-between lg:gap-5 flex-col lg:flex-row my-auto">
             <button
-                class="bg-sky-600 rounded-xl text-amber-300 hover:bg-sky-800 md:hover:text-amber-300 px-3 md:my-3 my-[2%] md:w-[130%]">+
-                Creat</button>
+                class="bg-sky-600 rounded-xl text-amber-300 hover:bg-sky-800 lg:hover:text-amber-300 px-3 text-[75%] sm:text-2xl lg:my-3 my-[2%] lg:w-[130%]"
+                >
+                <a href="./new-project.html">+ Creat</a>
+            </button>
             <button
-                class="bg-sky-600 rounded-xl text-gray-50 hover:bg-sky-800 px-3 md:my-3 my-[2%] md:w-[130%]">Paramètres</button>
+                class="bg-sky-600 rounded-xl text-gray-50 hover:bg-sky-800 px-3 text-[75%] sm:text-2xl lg:my-3 my-[2%] lg:w-[130%]"
+                >
+                Paramètres
+            </button>
         </div>
     </header>
 
     <main class="min-h-[90vh] flex">
-        <div class="no-project m-auto w-[90%] hidden">
+        <div class="no-project m-auto w-[70%] hidden">
             <h1>Aucun projet pour le moment, créez-en un pour générer votre premier plan.</h1>
             <button
                 class="bg-sky-600 rounded-xl text-amber-300 hover:bg-sky-800 md:hover:text-amber-300 px-3 md:my-3 my-[2%] md:w-[20%]">
-                + Creat
+                <a href="./new-project.html">+ Creat</a>
             </button>
         </div>
-        <div class="carts grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg-grid-cols-4 gap-1 w-full m-2">
-            <div class="bg-blue-950 col-span-1 row-span-1">
-                <h1>Project Name</h1>
-                <p>
+
+
+        <div class="carts grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg-grid-cols-4 gap-4 w-full m-2 ">
+            <div
+                class="bg-black col-span-1 row-span-1 rounded-2xl text-gray-50 font-black text-center p-2 gap-2  flex flex-col md-flex-row flex-wrap">
+                <h1 class="">Portail partenaires B2B</h1>
+                <p class=" text-gray-500 text-start mx-auto mb-3">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
                     commodi beatae provident optio temporibus harum culpa!
                 </p>
-                <h2>total Tasks : 20</h2>
-                <p>
-                    <h3>done : 16</h3>
-                    <h3>not yet :4</h3>
-                </p>
+                <div class="bg-blue-950 w-[95%] mx-auto p-1 rounded-xl flex flex-wrap gap-2">
+                    <h2 class="w-full">total Tasks : 20</h2>
+                    <div class="w-full flex justify-evenly">
+                        <h3>done : 16</h3>
+                        <h3>not yet : 4</h3>
+                    </div>
+                    <div class="bg-blue-50 w-[95%] mx-auto rounded-xl">
+                        <div class="w-[70%] text-center bg-sky-500 rounded-xl">70%</div>
+                    </div>
+                </div>
+                <div class="w-full md:flex gap-2">
+                    <button
+                        class="bg-blue-900 hover:bg-gray-200 hover:text-blue-900 p-3 rounded-xl my-2 w-[90%] md:w-[50%]">Task
+                        Board</button>
+                    <button
+                        class="bg-red-200 text-red-600 hover:bg-red-600 hover:text-red-200 p-3 rounded-xl my-2 w-[90%] md:w-[50%]">Supprimer</button>
+                </div>
             </div>
-            <div class="bg-blue-950 col-span-1 row-span-1">
-                <h1>Project Name</h1>
-                <p>
+            <div
+                class="bg-black col-span-1 row-span-1 rounded-2xl text-gray-50 font-black text-center p-2 gap-2  flex flex-col md-flex-row flex-wrap">
+                <h1 class="">Portail partenaires B2B</h1>
+                <p class=" text-gray-500 text-start mx-auto mb-3">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
                     commodi beatae provident optio temporibus harum culpa!
                 </p>
-                <h2>total Tasks : 20</h2>
-                <p>
-                <h3>done : 16</h3>
-                <h3>not yet :4</h3>
-                </p>
+                <div class="bg-blue-950 w-[95%] mx-auto p-1 rounded-xl flex flex-wrap gap-2">
+                    <h2 class="w-full">total Tasks : 20</h2>
+                    <div class="w-full flex justify-evenly">
+                        <h3>done : 16</h3>
+                        <h3>not yet : 4</h3>
+                    </div>
+                    <div class="bg-blue-50 w-[95%] mx-auto rounded-xl">
+                        <div class="w-[70%] text-center bg-sky-500 rounded-xl">70%</div>
+                    </div>
+                </div>
+                <div class="w-full md:flex gap-2">
+                    <button
+                        class="bg-blue-900 hover:bg-gray-200 hover:text-blue-900 p-3 rounded-xl my-2 w-[90%] md:w-[50%]">Task
+                        Board</button>
+                    <button
+                        class="bg-red-200 text-red-600 hover:bg-red-600 hover:text-red-200 p-3 rounded-xl my-2 w-[90%] md:w-[50%]">Supprimer</button>
+                </div>
             </div>
-            <div class="bg-blue-950 col-span-1 row-span-1">
-                <h1>Project Name</h1>
-                <p>
+            <div
+                class="bg-black col-span-1 row-span-1 rounded-2xl text-gray-50 font-black text-center p-2 gap-2  flex flex-col md-flex-row flex-wrap">
+                <h1 class="">Portail partenaires B2B</h1>
+                <p class=" text-gray-500 text-start mx-auto mb-3">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
                     commodi beatae provident optio temporibus harum culpa!
                 </p>
-                <h2>total Tasks : 20</h2>
-                <p>
-                <h3>done : 16</h3>
-                <h3>not yet :4</h3>
-                </p>
+                <div class="bg-blue-950 w-[95%] mx-auto p-1 rounded-xl flex flex-wrap gap-2">
+                    <h2 class="w-full">total Tasks : 20</h2>
+                    <div class="w-full flex justify-evenly">
+                        <h3>done : 16</h3>
+                        <h3>not yet : 4</h3>
+                    </div>
+                    <div class="bg-blue-50 w-[95%] mx-auto rounded-xl">
+                        <div class="w-[70%] text-center bg-sky-500 rounded-xl">70%</div>
+                    </div>
+                </div>
+                <div class="w-full md:flex gap-2">
+                    <button
+                        class="bg-blue-900 hover:bg-gray-200 hover:text-blue-900 p-3 rounded-xl my-2 w-[90%] md:w-[50%]">Task
+                        Board</button>
+                    <button
+                        class="bg-red-200 text-red-600 hover:bg-red-600 hover:text-red-200 p-3 rounded-xl my-2 w-[90%] md:w-[50%]">Supprimer</button>
+                </div>
             </div>
-            <div class="bg-blue-950 col-span-1 row-span-1">
-                <h1>Project Name</h1>
-                <p>
+            <div
+                class="bg-black col-span-1 row-span-1 rounded-2xl text-gray-50 font-black text-center p-2 gap-2  flex flex-col md-flex-row flex-wrap">
+                <h1 class="">Portail partenaires B2B</h1>
+                <p class=" text-gray-500 text-start mx-auto mb-3">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
                     commodi beatae provident optio temporibus harum culpa!
                 </p>
-                <h2>total Tasks : 20</h2>
-                <p>
-                <h3>done : 16</h3>
-                <h3>not yet :4</h3>
-                </p>
+                <div class="bg-blue-950 w-[95%] mx-auto p-1 rounded-xl flex flex-wrap gap-2">
+                    <h2 class="w-full">total Tasks : 20</h2>
+                    <div class="w-full flex justify-evenly">
+                        <h3>done : 16</h3>
+                        <h3>not yet : 4</h3>
+                    </div>
+                    <div class="bg-blue-50 w-[95%] mx-auto rounded-xl">
+                        <div class="w-[70%] text-center bg-sky-500 rounded-xl">70%</div>
+                    </div>
+                </div>
+                <div class="w-full md:flex gap-2">
+                    <button
+                        class="bg-blue-900 hover:bg-gray-200 hover:text-blue-900 p-3 rounded-xl my-2 w-[90%] md:w-[50%]">Task
+                        Board</button>
+                    <button
+                        class="bg-red-200 text-red-600 hover:bg-red-600 hover:text-red-200 p-3 rounded-xl my-2 w-[90%] md:w-[50%]">Supprimer</button>
+                </div>
             </div>
-            <div class="bg-blue-950 col-span-1 row-span-1">
-                <h1>Project Name</h1>
-                <p>
+            <div
+                class="bg-black col-span-1 row-span-1 rounded-2xl text-gray-50 font-black text-center p-2 gap-2  flex flex-col md-flex-row flex-wrap">
+                <h1 class="">Portail partenaires B2B</h1>
+                <p class=" text-gray-500 text-start mx-auto mb-3">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
                     commodi beatae provident optio temporibus harum culpa!
                 </p>
-                <h2>total Tasks : 20</h2>
-                <p>
-                <h3>done : 16</h3>
-                <h3>not yet :4</h3>
-                </p>
+                <div class="bg-blue-950 w-[95%] mx-auto p-1 rounded-xl flex flex-wrap gap-2">
+                    <h2 class="w-full">total Tasks : 20</h2>
+                    <div class="w-full flex justify-evenly">
+                        <h3>done : 16</h3>
+                        <h3>not yet : 4</h3>
+                    </div>
+                    <div class="bg-blue-50 w-[95%] mx-auto rounded-xl">
+                        <div class="w-[70%] text-center bg-sky-500 rounded-xl">70%</div>
+                    </div>
+                </div>
+                <div class="w-full md:flex gap-2">
+                    <button
+                        class="bg-blue-900 hover:bg-gray-200 hover:text-blue-900 p-3 rounded-xl my-2 w-[90%] md:w-[50%]">Task
+                        Board</button>
+                    <button
+                        class="bg-red-200 text-red-600 hover:bg-red-600 hover:text-red-200 p-3 rounded-xl my-2 w-[90%] md:w-[50%]">Supprimer</button>
+                </div>
             </div>
-            <div class="bg-blue-950 col-span-1 row-span-1">
-                <h1>Project Name</h1>
-                <p>
+            <div
+                class="bg-black col-span-1 row-span-1 rounded-2xl text-gray-50 font-black text-center p-2 gap-2  flex flex-col md-flex-row flex-wrap">
+                <h1 class="">Portail partenaires B2B</h1>
+                <p class=" text-gray-500 text-start mx-auto mb-3">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
                     commodi beatae provident optio temporibus harum culpa!
                 </p>
-                <h2>total Tasks : 20</h2>
-                <p>
-                <h3>done : 16</h3>
-                <h3>not yet :4</h3>
-                </p>
+                <div class="bg-blue-950 w-[95%] mx-auto p-1 rounded-xl flex flex-wrap gap-2">
+                    <h2 class="w-full">total Tasks : 20</h2>
+                    <div class="w-full flex justify-evenly">
+                        <h3>done : 16</h3>
+                        <h3>not yet : 4</h3>
+                    </div>
+                    <div class="bg-blue-50 w-[95%] mx-auto rounded-xl">
+                        <div class="w-[70%] text-center bg-sky-500 rounded-xl">70%</div>
+                    </div>
+                </div>
+                <div class="w-full md:flex gap-2">
+                    <button
+                        class="bg-blue-900 hover:bg-gray-200 hover:text-blue-900 p-3 rounded-xl my-2 w-[90%] md:w-[50%]">Task
+                        Board</button>
+                    <button
+                        class="bg-red-200 text-red-600 hover:bg-red-600 hover:text-red-200 p-3 rounded-xl my-2 w-[90%] md:w-[50%]">Supprimer</button>
+                </div>
             </div>
-            <div class="bg-blue-950 col-span-1 row-span-1">
-                <h1>Project Name</h1>
-                <p>
+            <div
+                class="bg-black col-span-1 row-span-1 rounded-2xl text-gray-50 font-black text-center p-2 gap-2  flex flex-col md-flex-row flex-wrap">
+                <h1 class="">Portail partenaires B2B</h1>
+                <p class=" text-gray-500 text-start mx-auto mb-3">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
                     commodi beatae provident optio temporibus harum culpa!
                 </p>
-                <h2>total Tasks : 20</h2>
-                <p>
-                <h3>done : 16</h3>
-                <h3>not yet :4</h3>
-                </p>
+                <div class="bg-blue-950 w-[95%] mx-auto p-1 rounded-xl flex flex-wrap gap-2">
+                    <h2 class="w-full">total Tasks : 20</h2>
+                    <div class="w-full flex justify-evenly">
+                        <h3>done : 16</h3>
+                        <h3>not yet : 4</h3>
+                    </div>
+                    <div class="bg-blue-50 w-[95%] mx-auto rounded-xl">
+                        <div class="w-[70%] text-center bg-sky-500 rounded-xl">70%</div>
+                    </div>
+                </div>
+                <div class="w-full md:flex gap-2">
+                    <button
+                        class="bg-blue-900 hover:bg-gray-200 hover:text-blue-900 p-3 rounded-xl my-2 w-[90%] md:w-[50%]">Task
+                        Board</button>
+                    <button
+                        class="bg-red-200 text-red-600 hover:bg-red-600 hover:text-red-200 p-3 rounded-xl my-2 w-[90%] md:w-[50%]">Supprimer</button>
+                </div>
             </div>
-            <div class="bg-blue-950 col-span-1 row-span-1">
-                <h1>Project Name</h1>
-                <p>
+            <div
+                class="bg-black col-span-1 row-span-1 rounded-2xl text-gray-50 font-black text-center p-2 gap-2  flex flex-col md-flex-row flex-wrap">
+                <h1 class="">Portail partenaires B2B</h1>
+                <p class=" text-gray-500 text-start mx-auto mb-3">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
                     commodi beatae provident optio temporibus harum culpa!
                 </p>
-                <h2>total Tasks : 20</h2>
-                <p>
-                <h3>done : 16</h3>
-                <h3>not yet :4</h3>
-                </p>
-            </div>
-            <div class="bg-blue-950 col-span-1 row-span-1">
-                <h1>Project Name</h1>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
-                    commodi beatae provident optio temporibus harum culpa!
-                </p>
-                <h2>total Tasks : 20</h2>
-                <p>
-                <h3>done : 16</h3>
-                <h3>not yet :4</h3>
-                </p>
-            </div>
-            <div class="bg-blue-950 col-span-1 row-span-1">
-                <h1>Project Name</h1>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
-                    commodi beatae provident optio temporibus harum culpa!
-                </p>
-                <h2>total Tasks : 20</h2>
-                <p>
-                <h3>done : 16</h3>
-                <h3>not yet :4</h3>
-                </p>
-            </div>
-            <div class="bg-blue-950 col-span-1 row-span-1">
-                <h1>Project Name</h1>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
-                    commodi beatae provident optio temporibus harum culpa!
-                </p>
-                <h2>total Tasks : 20</h2>
-                <p>
-                <h3>done : 16</h3>
-                <h3>not yet :4</h3>
-                </p>
-            </div>
-            <div class="bg-blue-950 col-span-1 row-span-1">
-                <h1>Project Name</h1>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam architecto quam accusantium
-                    commodi beatae provident optio temporibus harum culpa!
-                </p>
-                <h2>total Tasks : 20</h2>
-                <p>
-                <h3>done : 16</h3>
-                <h3>not yet :4</h3>
-                </p>
+                <div class="bg-blue-950 w-[95%] mx-auto p-1 rounded-xl flex flex-wrap gap-2">
+                    <h2 class="w-full">total Tasks : 20</h2>
+                    <div class="w-full flex justify-evenly">
+                        <h3>done : 16</h3>
+                        <h3>not yet : 4</h3>
+                    </div>
+                    <div class="bg-blue-50 w-[95%] mx-auto rounded-xl">
+                        <div class="w-[70%] text-center bg-sky-500 rounded-xl">70%</div>
+                    </div>
+                </div>
+                <div class="w-full md:flex gap-2">
+                    <button
+                        class="bg-blue-900 hover:bg-gray-200 hover:text-blue-900 p-3 rounded-xl my-2 w-[90%] md:w-[50%]">Task
+                        Board</button>
+                    <button
+                        class="bg-red-200 text-red-600 hover:bg-red-600 hover:text-red-200 p-3 rounded-xl my-2 w-[90%] md:w-[50%]">Supprimer</button>
+                </div>
             </div>
         </div>
     </main>
