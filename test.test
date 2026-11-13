@@ -25,3 +25,545 @@ PLANIT-AI/
 │
 ├── .gitignore
 └── README.md
+
+
+{
+    "projectName": "plant AI",
+    "totalEstimatedHours": 54,
+    "tasks": [
+        {
+            "id": "TASK-001",
+            "title": "Set Up the Project Environment and File Structure",
+            "description": "Initialize the PLANIT AI project using HTML, CSS, JavaScript ES6 modules and Tailwind CSS. Create the required folders and files to separate pages, application logic, styles, data and resources. Configure a local development server so that ES6 modules and Fetch requests work correctly. Establish a consistent naming convention for files and modules.",
+            "userStories": [
+                "As a developer, I want a structured project environment so that I can implement and maintain the application efficiently."
+            ],
+            "acceptanceCriteria": [
+                "The project contains index.html, new-project.html and project.html.",
+                "The project contains organized js, css, data and resources folders.",
+                "Tailwind CSS is available and working in the application.",
+                "A local development server successfully serves all HTML pages and static resources.",
+                "JavaScript modules can be loaded without file protocol or CORS errors."
+            ],
+            "priority": "Critical",
+            "importance": "High",
+            "size": "S",
+            "estimatedTime": 3,
+            "deadline": "Day 1",
+            "status": "To Do",
+            "dependencies": []
+        },
+        {
+            "id": "TASK-002",
+            "title": "Define the Application Architecture and Data Models",
+            "description": "Define the responsibilities of the JavaScript modules before implementation. Plan the separation between DOM manipulation, application state, API communication, prompt construction, persistence and reusable utilities. Define the project and task data structures, including all required task properties and permitted values. Establish how project IDs, task IDs and navigation between pages will work.",
+            "userStories": [
+                "As a developer, I want a clearly defined application architecture so that each module has one responsibility and the code remains maintainable.",
+                "As a user, I want my projects and tasks to follow a consistent data structure so that information is displayed and saved correctly."
+            ],
+            "acceptanceCriteria": [
+                "The architecture defines separate responsibilities for main.js, ui.js, state.js, api.js, prompt.js, storage.js and utils.js.",
+                "Each HTML page loads exactly one JavaScript entry point using a script element with type="module" and src="js/main.js".",
+                "The project data model includes the project name, description, brief, duration, developer count, technologies, difficulty and tasks.",
+                "The task data model includes all required fields: id, title, description, userStories, acceptanceCriteria, priority, importance, size, estimatedTime, deadline, status and dependencies.",
+                "All allowed enum values are documented and consistently defined.",
+                "The architecture does not rely on shared global variables or inline onclick attributes."
+            ],
+            "priority": "High",
+            "importance": "High",
+            "size": "S",
+            "estimatedTime": 3,
+            "deadline": "Day 1",
+            "status": "To Do",
+            "dependencies": [
+                "TASK-001"
+            ]
+        },
+        {
+            "id": "TASK-003",
+            "title": "Create the HTML Page Structures and Shared Layout",
+            "description": "Build the initial structures of the Dashboard, New Project and Task Board pages. Implement a consistent application header containing the PLANIT AI logo, navigation links and access to AI settings. Create reusable visual patterns for page containers, sections, buttons and content areas using Tailwind CSS. Add the required module entry point to each page.",
+            "userStories": [
+                "As a user, I want consistent navigation across the application so that I can move easily between the Dashboard, project creation and Task Board.",
+                "As a user, I want a clear and organized interface so that I can understand the application's main sections."
+            ],
+            "acceptanceCriteria": [
+                "index.html, new-project.html and project.html contain their respective page structures.",
+                "Each page displays the PLANIT AI header and the required navigation links.",
+                "The AI settings access is available from the shared header.",
+                "Navigation links open the correct HTML pages.",
+                "Each page loads exactly one JavaScript module entry point.",
+                "The shared layout uses Tailwind CSS classes and does not contain inline JavaScript event handlers."
+            ],
+            "priority": "High",
+            "importance": "High",
+            "size": "S",
+            "estimatedTime": 3,
+            "deadline": "Day 2",
+            "status": "To Do",
+            "dependencies": [
+                "TASK-001",
+                "TASK-002"
+            ]
+        },
+        {
+            "id": "TASK-004",
+            "title": "Implement Application State, Storage and Utility Modules",
+            "description": "Implement the foundation of the JavaScript application. Create state.js to manage projects and the currently selected project, storage.js to save and retrieve project data, and utils.js for reusable operations such as ID generation, progress calculation, numeric validation and deadline handling. Persist projects and their task modifications in localStorage so that application data remains available after page reloads. Keep AI credentials separate from persistent project data.",
+            "userStories": [
+                "As a user, I want my projects and task changes to remain available after refreshing the page so that I do not lose my work.",
+                "As a developer, I want centralized state and utility functions so that different pages use the same application logic."
+            ],
+            "acceptanceCriteria": [
+                "state.js exports named functions for reading and updating application state.",
+                "storage.js exports named functions for saving, loading and deleting projects.",
+                "Project data is successfully saved to and restored from localStorage.",
+                "A unique project identifier is generated for each new project.",
+                "Task IDs follow the required TASK-001, TASK-002 format within each project.",
+                "The project progress calculation uses only the number of Done tasks divided by the total number of tasks.",
+                "An empty task list does not cause a division-by-zero error.",
+                "API credentials are not stored in localStorage."
+            ],
+            "priority": "Critical",
+            "importance": "High",
+            "size": "S",
+            "estimatedTime": 3,
+            "deadline": "Day 2",
+            "status": "To Do",
+            "dependencies": [
+                "TASK-001",
+                "TASK-002"
+            ]
+        },
+        {
+            "id": "TASK-005",
+            "title": "Implement the AI Settings Modal and Session Storage",
+            "description": "Create an accessible AI settings modal that can be opened from the application header. Add a password-type input for the API key and controls to save or update the key. Implement the settings logic in dedicated modules and store the key exclusively in sessionStorage. Ensure that the application can retrieve the key during the current browser session without displaying its value in plain text.",
+            "userStories": [
+                "As a user, I want to enter and manage my AI API key so that I can generate development plans using the AI service.",
+                "As a user, I want my API key to be stored only for the current browser session so that it is not permanently saved with my project data."
+            ],
+            "acceptanceCriteria": [
+                "The AI settings modal opens from the header on every application page.",
+                "The API key field uses input type="password".",
+                "The user can save and update the API key.",
+                "The API key is stored and retrieved using sessionStorage.",
+                "The API key is not written to localStorage.",
+                "The key remains available after navigating between application pages in the same session.",
+                "The modal can be closed without saving changes."
+            ],
+            "priority": "High",
+            "importance": "High",
+            "size": "S",
+            "estimatedTime": 3,
+            "deadline": "Day 3",
+            "status": "To Do",
+            "dependencies": [
+                "TASK-003",
+                "TASK-004"
+            ]
+        },
+        {
+            "id": "TASK-006",
+            "title": "Implement the Dashboard and Project Management Interface",
+            "description": "Implement the Dashboard using ui.js for all DOM manipulation. Retrieve saved projects from the application state and render them as project cards. Each card must display the project name, description, total tasks, completed tasks, remaining tasks and progress percentage with a visual progress bar. Add navigation to the selected project's Task Board and a delete action with a confirmation step. Implement the empty state with a clear message and a button to create the first project.",
+            "userStories": [
+                "As a user, I want to see all my projects and their progress on the Dashboard so that I can monitor my development work.",
+                "As a user, I want to open a project's Task Board from its card so that I can manage its tasks.",
+                "As a user, I want to delete an unwanted project after confirmation so that I can keep my workspace organized."
+            ],
+            "acceptanceCriteria": [
+                "Saved projects are displayed as individual cards.",
+                "Each card displays the project name, description and task statistics.",
+                "Completed tasks are counted using the Done status only.",
+                "Remaining tasks are calculated as total tasks minus completed tasks.",
+                "The progress bar displays the correct Done-to-total percentage.",
+                "The project card provides a working link to project.html with the correct project ID.",
+                "Project deletion requires user confirmation.",
+                "Deleting a project removes it from persistent storage and immediately updates the Dashboard.",
+                "When no projects exist, the required empty-state message and New Project action are displayed."
+            ],
+            "priority": "High",
+            "importance": "High",
+            "size": "S",
+            "estimatedTime": 3,
+            "deadline": "Day 3",
+            "status": "To Do",
+            "dependencies": [
+                "TASK-003",
+                "TASK-004"
+            ]
+        },
+        {
+            "id": "TASK-007",
+            "title": "Build the New Project Form and Real-Time Validation",
+            "description": "Implement the project creation form with fields for project name, description, complete brief, duration in days, number of developers, technologies and difficulty level. Add real-time validation using input and submit events, with regular expressions and numeric checks where appropriate. Display an individual error message below each invalid field and prevent submission until every required field is valid.",
+            "userStories": [
+                "As a user, I want to enter my project's requirements and constraints so that the application can generate a suitable development plan.",
+                "As a user, I want immediate validation feedback so that I can correct form errors before generating my plan."
+            ],
+            "acceptanceCriteria": [
+                "The form contains all seven required project information fields.",
+                "The difficulty select offers Beginner, Intermediate and Advanced.",
+                "The project name, description, brief, duration, developer count and technologies are validated as required fields.",
+                "Duration and developer count accept integers greater than or equal to 1 only.",
+                "Invalid values display an error message below their corresponding fields.",
+                "Validation is triggered by input events and checked again on form submission.",
+                "The submit button remains disabled while at least one field is invalid.",
+                "The submit button becomes enabled when every field is valid.",
+                "Invalid form data cannot trigger an API request."
+            ],
+            "priority": "Critical",
+            "importance": "High",
+            "size": "S",
+            "estimatedTime": 3,
+            "deadline": "Day 4",
+            "status": "To Do",
+            "dependencies": [
+                "TASK-003",
+                "TASK-004"
+            ]
+        },
+        {
+            "id": "TASK-008",
+            "title": "Implement the AI Prompt Builder and API Service",
+            "description": "Create prompt.js containing the required buildPrompt(project) function. Integrate the supplied prompt from the resources without modifying its content, replacing only the designated bracketed values with the corresponding validated project information through a template literal. Create api.js to handle communication with the configured AI API endpoint. Retrieve the API key from sessionStorage, send the generated prompt using the required request format and return the API response to the application without directly manipulating the DOM.",
+            "userStories": [
+                "As a user, I want my project information to be converted into the required AI prompt so that the AI can generate a development plan based on my actual constraints.",
+                "As a developer, I want API communication isolated in its own module so that network requests can be maintained independently of the interface."
+            ],
+            "acceptanceCriteria": [
+                "prompt.js exports a named buildPrompt(project) function.",
+                "The supplied prompt content is integrated without changing its original instructions.",
+                "All designated project placeholders are replaced with the corresponding form values.",
+                "The function returns the complete prompt as a string.",
+                "api.js exports a named function responsible for sending the AI request.",
+                "The request retrieves the API key from sessionStorage rather than localStorage.",
+                "The request uses the configured API endpoint and expected request format.",
+                "The API response or a descriptive error is returned to the calling application.",
+                "api.js and prompt.js do not manipulate the DOM."
+            ],
+            "priority": "Critical",
+            "importance": "High",
+            "size": "S",
+            "estimatedTime": 3,
+            "deadline": "Day 4",
+            "status": "To Do",
+            "dependencies": [
+                "TASK-004",
+                "TASK-005"
+            ]
+        },
+        {
+            "id": "TASK-009",
+            "title": "Parse and Validate the AI-Generated Development Plan",
+            "description": "Implement a dedicated validation process that converts the AI response into a structured task array before it can be displayed or saved. Parse the response as JSON, verify the project task schema and required properties, check data types and allowed enum values, and validate task IDs and dependencies. Confirm that each dependency references an existing task, that dependency relationships are not circular and that every deadline falls within the project's duration. Reject malformed or incomplete plans with a useful validation error instead of displaying raw AI output.",
+            "userStories": [
+                "As a user, I want generated plans to be checked before they are added to my project so that I can work with reliable and consistent task data.",
+                "As a developer, I want invalid AI responses to be rejected safely so that malformed data cannot break the Task Board."
+            ],
+            "acceptanceCriteria": [
+                "The response is parsed as JSON before being used by the application.",
+                "Every task contains all required task model properties.",
+                "Task IDs are unique within the generated project.",
+                "Priority values are restricted to Low, Medium, High and Critical.",
+                "Importance values are restricted to Low, Medium and High.",
+                "Size values are restricted to XS, S, M, L and XL.",
+                "Status values are restricted to To Do, In Progress and Done.",
+                "estimatedTime is a valid non-negative number.",
+                "Every dependency references an existing task ID and does not reference the task itself.",
+                "Circular dependency relationships are rejected.",
+                "Deadlines use the expected Day N format and do not exceed the project duration.",
+                "Invalid AI output produces a descriptive validation error and is never rendered directly.",
+                "Valid task data is returned in the application's expected data structure."
+            ],
+            "priority": "Critical",
+            "importance": "High",
+            "size": "S",
+            "estimatedTime": 3,
+            "deadline": "Day 5",
+            "status": "To Do",
+            "dependencies": [
+                "TASK-002",
+                "TASK-008"
+            ]
+        },
+        {
+            "id": "TASK-010",
+            "title": "Integrate Project Generation and Generation Status Handling",
+            "description": "Connect the validated project form, prompt builder, API service, response validator and persistence modules into one complete generation workflow. Implement the idle, loading, success and error states. Display a spinner during requests, disable the generation button to prevent duplicate submissions, save the valid generated project and redirect to its Task Board after success. On API or validation failure, display a clear message and provide a Retry action. Ensure loading state is always released, including when requests fail.",
+            "userStories": [
+                "As a user, I want to generate a development plan from my project brief so that I can start organizing the work immediately.",
+                "As a user, I want to see the generation status and retry failed requests so that I understand what is happening and am not left with a blocked application."
+            ],
+            "acceptanceCriteria": [
+                "The generation action is available only when the form is valid.",
+                "The application constructs the prompt using buildPrompt(project).",
+                "The API response passes through the plan validation process before it is saved.",
+                "The idle state indicates that generation is ready.",
+                "The loading state displays a spinner and disables the generation button.",
+                "Multiple simultaneous submissions are prevented.",
+                "The success state confirms successful generation and redirects to the correct Task Board.",
+                "The error state displays a clear message and a working Retry action.",
+                "API errors, invalid responses and validation errors are handled without crashing the page.",
+                "The loading state is released after both successful and failed requests.",
+                "The generated project and tasks are saved to persistent storage before navigation."
+            ],
+            "priority": "Critical",
+            "importance": "High",
+            "size": "S",
+            "estimatedTime": 3,
+            "deadline": "Day 5",
+            "status": "To Do",
+            "dependencies": [
+                "TASK-006",
+                "TASK-007",
+                "TASK-009"
+            ]
+        },
+        {
+            "id": "TASK-011",
+            "title": "Implement the Project Task Board and Progress Summary",
+            "description": "Build the Task Board page and retrieve the selected project using the project ID supplied in the URL query string. Display the project name, duration, team size, estimated working hours, team capacity and progress. Create a three-column Kanban board containing To Do, In Progress and Done. Render task cards with their ID, title, priority badge, size badge, estimated time, deadline and dependency information. Use the centralized state and UI modules to update the displayed board.",
+            "userStories": [
+                "As a user, I want to visualize my project tasks in a Kanban board so that I can understand and track the work.",
+                "As a user, I want to see project capacity and progress information so that I can compare estimated work against available team capacity."
+            ],
+            "acceptanceCriteria": [
+                "The page retrieves the correct project using the id query parameter.",
+                "An invalid or missing project ID is handled with a clear error or return-to-Dashboard action.",
+                "The project summary displays the project name, duration and number of developers.",
+                "Team capacity is calculated using project duration multiplied by developer count and 6 productive hours per developer per day.",
+                "Estimated hours are calculated from the tasks' estimatedTime values.",
+                "The summary displays the project's current progress.",
+                "The board displays exactly three columns: To Do, In Progress and Done.",
+                "Every task appears in the column matching its current status.",
+                "Each task card displays its ID, title, priority, size, estimated time, deadline and dependencies.",
+                "Clicking a task card opens its task detail interface."
+            ],
+            "priority": "Critical",
+            "importance": "High",
+            "size": "S",
+            "estimatedTime": 3,
+            "deadline": "Day 6",
+            "status": "To Do",
+            "dependencies": [
+                "TASK-003",
+                "TASK-004",
+                "TASK-010"
+            ]
+        },
+        {
+            "id": "TASK-012",
+            "title": "Implement the Demo Mode Using Fetch",
+            "description": "Add a Mode démo action to the AI settings interface so users can work without an API key or an external AI request. Implement a GET request using Fetch to load data/sample-plan.json. Pass the retrieved sample plan through the same parsing and validation process used for AI-generated plans. Save it as a new project using the normal persistence layer and redirect the user to its Task Board. Handle missing files, network failures and invalid sample data with clear feedback.",
+            "userStories": [
+                "As a user, I want to load a sample development plan so that I can explore the application without configuring an AI API key.",
+                "As a user, I want demo data to follow the same validation rules as generated data so that the Task Board behaves consistently."
+            ],
+            "acceptanceCriteria": [
+                "The AI settings modal contains a Mode démo action.",
+                "The application requests data/sample-plan.json using Fetch with the GET method.",
+                "The sample plan is parsed and validated before being saved.",
+                "The sample plan passes through the same task validation rules as AI-generated plans.",
+                "The demo action does not require an API key or make an AI API request.",
+                "The sample plan is saved as a project using a unique project ID.",
+                "Successful demo loading redirects to the new project's Task Board.",
+                "Missing files, failed Fetch requests and invalid sample data display clear error messages."
+            ],
+            "priority": "High",
+            "importance": "High",
+            "size": "S",
+            "estimatedTime": 3,
+            "deadline": "Day 6",
+            "status": "To Do",
+            "dependencies": [
+                "TASK-009",
+                "TASK-010",
+                "TASK-011"
+            ]
+        },
+        {
+            "id": "TASK-013",
+            "title": "Create the Task Detail Modal",
+            "description": "Implement the task detail modal opened by selecting a card from the Kanban board. Retrieve the selected task from application state and display its full information, including description, user stories, acceptance criteria, priority, importance, size, estimated time, deadline, status and dependencies. Organize the information into readable sections and provide clearly accessible controls for editing and deleting the task.",
+            "userStories": [
+                "As a user, I want to inspect a task's complete details so that I understand its objective, acceptance conditions and dependencies.",
+                "As a user, I want to access task management actions from the detail view so that I can update or remove tasks easily."
+            ],
+            "acceptanceCriteria": [
+                "Clicking a task card opens the corresponding task detail modal.",
+                "The modal displays the task ID and all required task properties.",
+                "User stories and acceptance criteria are displayed as readable lists.",
+                "Dependencies are displayed with their corresponding task IDs.",
+                "The modal always displays the information belonging to the selected task.",
+                "The modal can be closed using its close control.",
+                "The modal provides access to task editing and deletion actions.",
+                "The modal is implemented through ui.js without direct DOM manipulation in other modules."
+            ],
+            "priority": "High",
+            "importance": "High",
+            "size": "S",
+            "estimatedTime": 3,
+            "deadline": "Day 7",
+            "status": "To Do",
+            "dependencies": [
+                "TASK-011"
+            ]
+        },
+        {
+            "id": "TASK-014",
+            "title": "Implement Task Editing and Dependency-Based Status Validation",
+            "description": "Add task editing functionality to the detail modal. Allow users to update the title, description, priority, size, deadline and status. Validate edited values against the task model before saving. Implement the dependency business rule: a task cannot be moved to Done while any of its dependencies remains in a status other than Done. Display a clear explanation when the rule prevents a status change. Save every accepted update through the state and storage modules and refresh the corresponding task card and project statistics.",
+            "userStories": [
+                "As a user, I want to update task information so that I can adapt the development plan as the project evolves.",
+                "As a user, I want task dependencies to be enforced so that dependent work cannot be marked Done prematurely.",
+                "As a user, I want my manual changes to persist after reloading the page so that my task updates are not lost."
+            ],
+            "acceptanceCriteria": [
+                "The user can edit the title, description, priority, size, deadline and status.",
+                "Priority, size and status accept only their permitted values.",
+                "The edited deadline remains within the project duration and follows the Day N format.",
+                "A task can be marked Done only when all its dependencies have status Done.",
+                "An attempted invalid transition to Done is rejected.",
+                "A clear message identifies that unfinished dependencies prevent completion.",
+                "A task can be moved to Done after all its dependencies are Done.",
+                "Accepted changes are saved to localStorage through the storage module.",
+                "Changes remain available after the page is reloaded.",
+                "The Task Board, progress summary and task detail modal display the updated values immediately."
+            ],
+            "priority": "Critical",
+            "importance": "High",
+            "size": "S",
+            "estimatedTime": 3,
+            "deadline": "Day 7",
+            "status": "To Do",
+            "dependencies": [
+                "TASK-004",
+                "TASK-013"
+            ]
+        },
+        {
+            "id": "TASK-015",
+            "title": "Implement Task Deletion and Dependency Cleanup",
+            "description": "Implement task deletion from the task detail interface with a confirmation step. When a task is deleted, remove it from the project's task collection and remove its ID from the dependencies array of every remaining task. Persist the updated project, refresh all Kanban columns and project statistics, and ensure the interface does not retain references to the deleted task.",
+            "userStories": [
+                "As a user, I want to delete unnecessary tasks after confirmation so that my project plan stays accurate.",
+                "As a user, I want deleted tasks to be removed from other tasks' dependency lists so that the project does not contain broken references."
+            ],
+            "acceptanceCriteria": [
+                "The task detail interface provides a delete action.",
+                "Deleting a task requires explicit user confirmation.",
+                "The confirmed task is removed from the project's task collection.",
+                "The deleted task ID is removed from every remaining task's dependencies array.",
+                "The updated project is saved to localStorage.",
+                "The deleted task disappears from the Task Board immediately.",
+                "Remaining task cards and project statistics are refreshed.",
+                "No remaining task references the deleted task ID."
+            ],
+            "priority": "High",
+            "importance": "High",
+            "size": "S",
+            "estimatedTime": 3,
+            "deadline": "Day 8",
+            "status": "To Do",
+            "dependencies": [
+                "TASK-014"
+            ]
+        },
+        {
+            "id": "TASK-016",
+            "title": "Perform Functional Integration and Error-Handling Tests",
+            "description": "Test the complete application workflow across all pages and JavaScript modules. Verify project creation, form validation, AI prompt generation, API communication, response parsing, project persistence, demo mode, Kanban navigation, task editing, dependency restrictions and deletion. Test negative scenarios such as missing API keys, network failures, malformed AI responses, invalid project IDs and unavailable demo files. Fix integration defects discovered during testing.",
+            "userStories": [
+                "As a user, I want all application features to work together correctly so that I can manage a project from creation through task completion.",
+                "As a developer, I want to detect and correct integration and error-handling problems so that the application behaves reliably."
+            ],
+            "acceptanceCriteria": [
+                "A valid project can be created and its generated plan appears in the correct Task Board.",
+                "Invalid form data cannot start project generation.",
+                "Invalid AI responses are rejected without being displayed as tasks.",
+                "API failures display a clear error and allow a retry.",
+                "Demo mode successfully creates a project using the sample JSON file.",
+                "Project and task changes persist after page reloads.",
+                "The dependency restriction prevents tasks from being marked Done prematurely.",
+                "Deleting a task removes its dependency references.",
+                "Project progress and task statistics remain accurate after status changes and deletion.",
+                "Missing or invalid project IDs do not cause unhandled application errors.",
+                "No critical JavaScript console errors remain during the tested user journeys."
+            ],
+            "priority": "Critical",
+            "importance": "High",
+            "size": "S",
+            "estimatedTime": 3,
+            "deadline": "Day 8",
+            "status": "To Do",
+            "dependencies": [
+                "TASK-012",
+                "TASK-013",
+                "TASK-014",
+                "TASK-015"
+            ]
+        },
+        {
+            "id": "TASK-017",
+            "title": "Improve Responsive Design, Accessibility and User Experience",
+            "description": "Review the complete application interface and improve its usability on desktop, tablet and mobile screens. Refine the Dashboard cards, project creation form, settings modal, task detail modal and Kanban columns. Check keyboard navigation, accessible form labels, button names, modal interactions, visual feedback and readable error messages. Perform a final responsive and interface regression pass and correct any visual or interaction defects.",
+            "userStories": [
+                "As a user, I want the application to work on different screen sizes so that I can manage my projects from different devices.",
+                "As a user, I want clear labels, feedback and keyboard-accessible controls so that I can use the application comfortably."
+            ],
+            "acceptanceCriteria": [
+                "The Dashboard, project form and Task Board remain usable on desktop, tablet and mobile screen widths.",
+                "Project cards and task cards do not overflow their containers.",
+                "The Kanban board remains navigable on small screens.",
+                "Forms have correctly associated labels and visible validation feedback.",
+                "Buttons and interactive elements have descriptive accessible names.",
+                "Modals can be operated using keyboard-accessible controls.",
+                "Focus remains usable when opening and closing modals.",
+                "Text and interface elements have sufficient readability and visible interaction states.",
+                "All main user journeys are checked again after interface changes.",
+                "No significant layout defects or unusable controls remain."
+            ],
+            "priority": "Medium",
+            "importance": "Medium",
+            "size": "S",
+            "estimatedTime": 3,
+            "deadline": "Day 9",
+            "status": "To Do",
+            "dependencies": [
+                "TASK-016"
+            ]
+        },
+        {
+            "id": "TASK-018",
+            "title": "Prepare Deployment, Project Documentation and Final Verification",
+            "description": "Prepare the application for submission. Organize the final project files, verify that all required resources are included and deploy or publish the application using a hosting solution compatible with static HTML, CSS and JavaScript modules. Document the project structure, local execution steps, API key configuration, demo mode, application features and important business rules. Perform a final smoke test on the deployed or submitted version and verify that the project meets the submission requirements and deadline.",
+            "userStories": [
+                "As a user or evaluator, I want to access a working version of PLANIT AI so that I can test its features without setting up the development environment.",
+                "As a developer, I want clear project documentation so that another person can understand, run and maintain the application."
+            ],
+            "acceptanceCriteria": [
+                "The final project contains all required HTML, CSS, JavaScript, data and resource files.",
+                "The application can be launched locally using the documented development instructions.",
+                "The application is deployed or published through a compatible hosting solution, or a complete submission package is prepared when deployment is unavailable.",
+                "The documentation explains the application structure and the responsibility of each JavaScript module.",
+                "The documentation explains how to configure the AI API key and use demo mode.",
+                "The documentation describes the main project and task management features.",
+                "The documentation explains the dependency rule and project progress calculation.",
+                "The deployed or submitted version successfully loads its pages, ES6 modules and sample JSON data.",
+                "A final smoke test confirms that the Dashboard, project creation, Task Board and task management workflows are accessible.",
+                "The final version is ready for submission before 20/11/2026 at 11:59."
+            ],
+            "priority": "High",
+            "importance": "High",
+            "size": "S",
+            "estimatedTime": 3,
+            "deadline": "Day 9",
+            "status": "To Do",
+            "dependencies": [
+                "TASK-017"
+            ]
+        }
+    ]
+}
