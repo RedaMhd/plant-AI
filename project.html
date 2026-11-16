@@ -11,7 +11,7 @@
 
 </head>
 
-<body class="text-2xl md:text-[100%] bg-sky-900">
+<body class="text-2xl md:text-[100%] bg-gray-400">
 
     <header class="flex lg:justify-evenly justify-between px-3 h-[] bg-blue-950 text-gray-500 text-[140%]">
         <img src="./images/hamburger.png" id="hum" alt="hamburger menu" class="lg:w-0 w-auto h-[2em] my-auto">
@@ -38,7 +38,63 @@
         </div>
     </header>
     <main class="min-h-[90vh] flex p-2">
+        <div class="grid grid-rows-5  bg-sky-900 rounded-t-2xl p-2">
+            <div class="hed row-span-1  text-center flex flex-col gap-3 justify-center">
+                <h1 class="title font-black">(projectName)</h1>
+                <h2 class="time">(totalEstimatedHours)h</h2>
+                <div class="bg-blue-950 w-[95%] mx-auto p-1 rounded-xl flex flex-wrap gap-2 text-gray-200">
+                    <h2 class="w-full">total Tasks : 20</h2>
+                    <div class="w-full flex justify-evenly">
+                        <h3>done : 16</h3>
+                        <h3>not yet : 4</h3>
+                    </div>
+                    <div class="bg-blue-50 w-[95%] mx-auto rounded-xl">
+                        <div class="w-[70%] text-center bg-sky-500 rounded-xl">70%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="body row-span-4 grid grid-rows-3 gap-2 bg-blue-900 rounded">
+                <div class="toDo row-span-1  border border-gray-200 rounded-2xl m-1 p-1">
+                    <h1 class="bg-gray-200 text-center rounded-2xl ">To Do</h1>
+                    <div class="taches p-2">
 
+                                <div class="card  bg-blue-950 w-[95%] m-auto rounded-2xl p-2 text-gray-300 flex flex-col">
+                                    <h1 class="text-[80%] text-amber-500 bg-gray-500 w-[50%] text-center rounded-2xl">TASK-00O</h1>
+                                    <h1 class="mb-3 font-black ">Set up repository and project structure</h1>
+                                    <div class="dependance flex flex-col"><!-- hidden dependencies-->
+                                        <h2>Dependances :</h2>
+                                        <ul class="m-auto flex text-[75%] gap-1 flex-wrap">
+                                            <li class="bg-gray-700 rounded-xl p-1">TASK-00X</li>
+                                            <li class="bg-gray-700 rounded-xl p-1">TASK-00Y</li>
+                                            <li class="bg-gray-700 rounded-xl p-1">TASK-00Z</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="m-auto flex justify-evenly rounded bg-blue-900 my-2 w-full">
+                                        <span>(priority)</span>
+                                        <span>(size)</span>
+                                        <span>50h</span><!--(estimatedTime)-->
+                                    </div>
+
+                                    <h2>(deadline)</h2>
+                                </div>
+
+                    </div>
+                </div>
+                <div class="inProgress row-span-1  border border-gray-200 rounded-2xl m-1 p-1">
+                    <h1 class="bg-gray-200 text-center rounded-2xl">In Progress</h1>
+                    <div class="taches">
+
+                    </div>
+                </div>
+                <div class="done row-span-1  border border-gray-200 rounded-2xl m-1 p-1">
+                    <h1 class="bg-gray-200 text-center rounded-2xl">Done</h1>
+                    <div class="taches">
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
