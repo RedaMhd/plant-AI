@@ -5,7 +5,10 @@ export function validate_form(){
     const fromPr = $(formbtn).parsley();
     formFeilds.forEach(el =>{
         console.log(el.tagName)
-        el.addEventListener('change', ()=>{
+        el.addEventListener('change', ()=>{forme.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log('Form submitted!');
+});
             // alert('he')
             let elp = $(el).parsley();
             if(!elp.isValid()){
