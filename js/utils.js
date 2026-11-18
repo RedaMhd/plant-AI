@@ -45,4 +45,34 @@ export function parametre_AI(){
         dialog.classList.toggle('hidden');
 
     })
+
+    btn_demo.addEventListener('click', ()=>{
+        to_fetch('../data/sample-plan.json');
+    })
+}
+
+function to_fetch(url){
+    fetch(url)
+    .then(res => {
+        console.log(res)
+        if(!res.ok)throw new Error('test is not ok:')
+        return res.json();
+    })
+    .then(data =>{
+        // console.log(data);
+        const dataNow = JSON.parse(localStorage.getItem('data'))|| [];
+        console.log(data.projectName);
+        let index = dataNow.findIndex(()=>data.projectName === 'Demo project');
+        if(index === -1){
+            dataNow.push({id : dataNow.length, project : data,name : data.projectName});
+            localStorage.setItem('data', JSON.stringify(dataNow));
+            window.location.href = `./project.html?id=${dataNow.length - 1}`;
+        }else{
+
+            window.location.href = `./project.html?id=${index}`;
+        }
+    })
+    .catch(err =>{
+        console.error('This Stat:',err)
+    })
 }
