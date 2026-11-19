@@ -1,8 +1,8 @@
-
+import { creatProject } from "./prompt.js";
 export function validate_form(){
     const formFeilds = document.querySelectorAll('.feild');
+    const form = document.querySelector('.new-project');
     const formbtn = document.querySelector('form > button');
-    // const fromPr = $(formbtn).parsley();
     formFeilds.forEach(el =>{
         // console.log(el.tagName)
         el.addEventListener('keydown', ()=>{
@@ -22,6 +22,16 @@ export function validate_form(){
                 pErr.classList.add('hidden');
                 formbtn.classList.remove('line-through');
         })
+    })
+    form.addEventListener('submit', (e)=>{
+        const formPr = $(form).parsley();
+        e.preventDefault();
+        if(!formPr.isValid()){
+            return ;
+        }
+        let formData = new FormData(e.target);
+        let dataForm = Object.fromEntries(formData);
+        creatProject(dataForm);
     })
 
 }

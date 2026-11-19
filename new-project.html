@@ -9,6 +9,11 @@
     <link rel="icon"
         href="https://imgs.search.brave.com/FtzJIkY_vsW0PHw6GDfOpHeXyKaTq0rnQTsFQq42R6Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTUx/MDkxNzg4NC92ZWN0/b3IvY2FtZXJhLWlj/b24taXNvbGF0ZWQt/b24tdHJhbnNwYXJl/bnQtYmFja2dyb3Vu/ZC1lYXNpbHktZWRp/dGFibGUtbGluZS1h/cnQtc3ltYm9sLWZv/ci1kZXNpZ24uanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPU8z/Q2ttdVQzMmFWb1ZF/LVVKYjRFOGVKU05w/MGUtMlB3VjRtWTB6/VEpwZEk9">
 
+    <!-- <style>
+        form > li{
+            width: 100%;
+        }
+    </style> -->
 
 </head>
 
@@ -64,42 +69,42 @@
     <main class="min-h-[90vh] flex p-2">
 
         <form data-parsley-validate action=""
-            class="bg-black rounded-2xl text-gray-300 w-[95%] mx-auto p-2 flex flex-wrap gap-1 lg:gap-0 lg:max-w-[50%] lg:px-[10%]">
+            class="bg-black rounded-2xl text-gray-300 w-[95%] mx-auto p-2 flex flex-wrap gap-1 lg:gap-0 lg:max-w-[50%] lg:px-[10%] new-project">
             <h2 class="mx-auto font-black text-amber-500 lg:w-[90%] text-center">Créer un nouveau projet</h2>
 
-            <label class=" w-[95%] lg:w-[35%] mt-4" for="nom">Nom du projet :</label>
+            <label class=" w-[95%] lg:w-[90%] mt-4" for="nom">Nom du projet :</label>
             <input class="feild w-[95%] lg:w-[65%] bg-white text-blue-900 rounded-xl ml-[20%]" type="text" id="nom"
                 name="nom" placeholder="Ex: Task Management App" required>
             <p class="onError-nom text-red-500 w-full border-t hidden"></p>
 
-            <label class=" w-[95%] lg:w-[35%] mt-4" for="desc">Description :</label>
+            <label class=" w-[95%] lg:w-[90%] mt-4" for="desc">Description :</label>
             <textarea class="feild w-[95%] lg:w-[65%] bg-white text-blue-900 rounded-xl ml-[20%]" id="desc" name="desc"
                 placeholder="Une description du projet..." required>
             </textarea>
             <p class="onError-desc text-red-500 w-full border-t hidden"></p>
 
-            <label class=" w-[95%] lg:w-[35%] mt-4" for="brief">Brief complet :</label>
+            <label class=" w-[95%] lg:w-[90%] mt-4" for="brief">Brief complet :</label>
             <textarea class="feild w-[95%] lg:w-[65%] bg-white text-blue-900 rounded-xl ml-[20%]" id="brief"
                 name="brief" required>
             </textarea>
             <p class="onError-brief text-red-500 w-full border-t hidden"></p>
 
-            <label class=" w-[95%] lg:w-[35%] mt-4" for="duree">Durée :</label>
+            <label class=" w-[95%] lg:w-[90%] mt-4" for="duree">Durée :</label>
             <input class="feild w-[95%] lg:w-[65%] bg-white text-blue-900 rounded-xl ml-[20%]" type="number" id="duree"
                 name="duree" min="1" placeholder="Ex: 30" required>
             <p class="onError-duree text-red-500 w-full border-t hidden"></p>
 
-            <label class=" w-[95%] lg:w-[35%] mt-4" for="nbrDev">Nombre de développeurs :</label>
+            <label class=" w-[95%] lg:w-[90%] mt-4" for="nbrDev">Nombre de développeurs :</label>
             <input class="feild w-[95%] lg:w-[65%] bg-white text-blue-900 rounded-xl ml-[20%]" type="number" id="nbrDev"
                 name="nbrDev" min="1" placeholder="Ex: 3" required>
-            <p class="onError- text-red-500 w-full border-t hidden"></p>
+            <p class="onError-nbrDev text-red-500 w-full border-t hidden"></p>
 
-            <label class=" w-[95%] lg:w-[35%] mt-4" for="tech">Technologies :</label>
+            <label class=" w-[95%] lg:w-[90%] mt-4" for="tech">Technologies :</label>
             <input class="feild w-[95%] lg:w-[65%] bg-white text-blue-900 rounded-xl ml-[20%]" type="text" id="tech"
                 name="tech" required>
             <p class="onError-tech text-red-500 w-full border-t hidden"></p>
 
-            <label class=" w-[95%] lg:w-[35%] mt-4" for="diff">Niveau de difficulté :</label>
+            <label class=" w-[95%] lg:w-[90%] mt-4" for="diff">Niveau de difficulté :</label>
             <select class="feild w-[95%] lg:w-[65%] bg-blue-400 p-1 text-black ml-[20%] rounded-xl" id="diff"
                 name="diff" required>
                 <option value="">Choisir un niveau</option>
