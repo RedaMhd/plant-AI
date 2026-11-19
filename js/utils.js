@@ -55,16 +55,16 @@ function to_fetch(url){
     fetch(url)
     .then(res => {
         console.log(res)
-        if(!res.ok)throw new Error('test is not ok:')
+        if(!res.ok)throw new Error('this is not good :')
         return res.json();
     })
-    .then(data =>{
-        // console.log(data);
+    .then(jsonProject =>{
+        // console.log(jsonProject);
         const dataNow = JSON.parse(localStorage.getItem('data'))|| [];
-        console.log(data.projectName);
-        let index = dataNow.findIndex(()=>data.projectName === 'Demo project');
+        console.log(jsonProject.projectName);
+        let index = dataNow.findIndex((d)=>jsonProject.projectName === d.name);
         if(index === -1){
-            dataNow.push({id : dataNow.length, project : data,name : data.projectName});
+            dataNow.push({id : dataNow.length, project : jsonProject,name : jsonProject.projectName});
             localStorage.setItem('data', JSON.stringify(dataNow));
             window.location.href = `./project.html?id=${dataNow.length - 1}`;
         }else{
@@ -73,6 +73,13 @@ function to_fetch(url){
         }
     })
     .catch(err =>{
-        console.error('This Stat:',err)
+        console.error('ErRor :',err)
     })
+}
+
+export function getIdProject(){
+    const par = window.location.search;
+    const objParameter = new URLSearchParams(par);
+
+    return objParameter.get('id');
 }

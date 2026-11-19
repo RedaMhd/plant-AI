@@ -38,8 +38,8 @@
         </div>
     </header>
     <main class="min-h-[90vh] flex p-2">
-        <div class="grid grid-rows-5  bg-sky-900 rounded-t-2xl p-2">
-            <div class="hed row-span-1  text-center flex flex-col gap-3 justify-center">
+        <div class="grid grid-rows-5  bg-sky-900 rounded-t-2xl p-2 m-auto md:min-w-[80%]">
+            <div class="head row-span-1 md:mr-auto md:min-w-[50vh] md:flex text-center flex flex-col md:text-start md:p-6 gap-3 justify-center">
                 <h1 class="title font-black">(projectName)</h1>
                 <h2 class="time">(totalEstimatedHours)h</h2>
                 <div class="bg-blue-950 w-[95%] mx-auto p-1 rounded-xl flex flex-wrap gap-2 text-gray-200">
@@ -53,43 +53,22 @@
                     </div>
                 </div>
             </div>
-            <div class="body row-span-4 grid grid-rows-3 gap-2 bg-blue-900 rounded">
-                <div class="toDo row-span-1  border border-gray-200 rounded-2xl m-1 p-1">
-                    <h1 class="bg-gray-200 text-center rounded-2xl ">To Do</h1>
-                    <div class="taches p-2">
-
-                                <div class="card  bg-blue-950 w-[95%] m-auto rounded-2xl p-2 text-gray-300 flex flex-col">
-                                    <h1 class="text-[80%] text-amber-500 bg-gray-500 w-[50%] text-center rounded-2xl">TASK-00O</h1>
-                                    <h1 class="mb-3 font-black ">Set up repository and project structure</h1>
-                                    <div class="dependance flex flex-col"><!-- hidden dependencies-->
-                                        <h2>Dependances :</h2>
-                                        <ul class="m-auto flex text-[75%] gap-1 flex-wrap">
-                                            <li class="bg-gray-700 rounded-xl p-1">TASK-00X</li>
-                                            <li class="bg-gray-700 rounded-xl p-1">TASK-00Y</li>
-                                            <li class="bg-gray-700 rounded-xl p-1">TASK-00Z</li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="m-auto flex justify-evenly rounded bg-blue-900 my-2 w-full">
-                                        <span>(priority)</span>
-                                        <span>(size)</span>
-                                        <span>50h</span><!--(estimatedTime)-->
-                                    </div>
-
-                                    <h2>(deadline)</h2>
-                                </div>
+            <div class="body row-span-4 grid grid-rows-3 md:grid-cols-3 md:grid-rows-1 gap-2 bg-blue-900 rounded h-[140vh]">
+                <div class="toDo row-span-1 md:col-span-1 border border-gray-200 rounded-2xl m-1 p-1" style="overflow-y: scroll;">
+                    <h1 class="bg-gray-200 text-center rounded-2xl sticky top-0  ">To Do</h1>
+                    <div class="taches p-2 h-[max-content] flex flex-col gap-2">
 
                     </div>
                 </div>
-                <div class="inProgress row-span-1  border border-gray-200 rounded-2xl m-1 p-1">
-                    <h1 class="bg-gray-200 text-center rounded-2xl">In Progress</h1>
-                    <div class="taches">
+                <div class="inProg row-span-1 md:col-span-1 border border-gray-200 rounded-2xl m-1 p-1" style="overflow-y: scroll;">
+                    <h1 class="bg-gray-200 text-center rounded-2xl sticky top-0  ">In Progress</h1>
+                    <div class="taches p-2 h-[max-content] flex flex-col gap-2">
 
                     </div>
                 </div>
-                <div class="done row-span-1  border border-gray-200 rounded-2xl m-1 p-1">
-                    <h1 class="bg-gray-200 text-center rounded-2xl">Done</h1>
-                    <div class="taches">
+                <div class="done row-span-1 md:col-span-1 border border-gray-200 rounded-2xl m-1 p-1" style="overflow-y: scroll;">
+                    <h1 class="bg-gray-200 text-center rounded-2xl sticky top-0  ">Done</h1>
+                    <div class="taches p-2 h-[max-content] flex flex-col gap-2">
 
                     </div>
                 </div>
