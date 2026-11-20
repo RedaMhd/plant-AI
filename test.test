@@ -567,3 +567,340 @@ PLANIT-AI/
         }
     ]
 }
+
+[{"text":"{
+      "projectName": "plantAIpp",
+  "totalEstimatedHours": 54,
+  "tasks": [
+        {
+          "id": "TASK-001",
+      "title": "Project Initialization and ES6 Architecture Setup",
+      "description": "Set up the project directory structure adhering to ES6 module separation (main.js, ui.js, state.js, api.js, storage.js, utils.js) and create the basic HTML boilerplate files (index.html, new-project.html, project.html).",
+      "userStories": [
+            "As a developer, I want a clean ES6 module structure so that the codebase is maintainable and adheres to separation of concerns."
+      ],
+      "acceptanceCriteria": [
+            "Directory structure contains index.html, new-project.html, project.html, and a js/ folder with modular files.",
+        "Each HTML file imports its entry point using <script type="module" src="js/main.js"></script>.",
+        "No global shared variables or inline onclick handlers are used."
+      ],
+      "priority": "Critical",
+      "importance": "High",
+      "size": "M",
+      "estimatedTime": 6,
+      "deadline": "Day 1",
+      "status": "To Do",
+      "dependencies": []
+    },
+    {
+          "id": "TASK-002",
+      "title": "Implement Storage and State Management Modules",
+      "description": "Develop storage.js to handle session storage for the AI API key and local storage for projects/tasks, and state.js to maintain reactive application state without global pollution.",
+      "userStories": [
+            "As a user, I want my API key saved securely in session storage and my manual project/task modifications persisted across page reloads."
+      ],
+      "acceptanceCriteria": [
+            "storage.js securely saves and retrieves the API key using sessionStorage.",
+        "Manual modifications to tasks and projects persist across page reloads using localStorage.",
+        "state.js manages internal application state securely using ES6 module exports."
+      ],
+      "priority": "High",
+      "importance": "High",
+      "size": "M",
+      "estimatedTime": 6,
+      "deadline": "Day 2",
+      "status": "To Do",
+      "dependencies": [
+            "TASK-001"
+      ]
+    },
+    {
+          "id": "TASK-003",
+      "title": "Develop AI Settings Modal and Demo Mode Integration",
+      "description": "Create the AI Settings modal accessed from the header, allowing API key input and providing a Demo Mode button that fetches sample data from data/sample-plan.json using Fetch (GET).",
+      "userStories": [
+            "As a user, I want to configure my AI API key or activate Demo Mode so that I can test the application without a live API key."
+      ],
+      "acceptanceCriteria": [
+            "Settings modal opens from the header with a password-type input for the API key.",
+        "API key is saved correctly into sessionStorage.",
+        "Demo Mode button triggers a GET fetch request to data/sample-plan.json and populates sample data successfully."
+      ],
+      "priority": "High",
+      "importance": "Medium",
+      "size": "M",
+      "estimatedTime": 6,
+      "deadline": "Day 3",
+      "status": "To Do",
+      "dependencies": [
+            "TASK-002"
+      ]
+    },
+    {
+          "id": "TASK-004",
+      "title": "Implement Dashboard UI and Project List View",
+      "description": "Build the index.html Dashboard view displaying the PLANIT AI logo, navigation, AI settings link, project cards with progress bars, and an empty state message when no projects exist.",
+      "userStories": [
+            "As a user, I want to view all my projects on the dashboard with progress metrics so that I can track overall status easily."
+      ],
+      "acceptanceCriteria": [
+            "Dashboard displays header with logo, navigation, and settings access.",
+        "Projects are listed as cards showing name, description, total tasks, completed tasks, remaining tasks, and progress bar.",
+      ]}
+
+
+
+  ]
+  }
+  }
+]
+
+
+{
+  "projectName": "plant AI",
+  "totalEstimatedHours": 52,
+  "tasks": [
+    {
+      "id": "TASK-001",
+      "title": "Project Setup and ES6 Module Architecture",
+      "description": "Initialize the project directory structure, HTML skeleton files (index.html, new-project.html, project.html), and configure ES6 module setup with js/main.js.",
+      "userStories": [
+        "As a developer, I want a clean modular architecture so that the codebase is maintainable and scalable."
+      ],
+      "acceptanceCriteria": [
+        "All HTML files include the type='module' script tag.",
+        "Directory structure separates UI, state, API, persistence, and utility modules.",
+        "Application runs without console errors."
+      ],
+      "priority": "Critical",
+      "importance": "High",
+      "size": "M",
+      "estimatedTime": 6,
+      "deadline": "Day 1",
+      "status": "To Do",
+      "dependencies": []
+    },
+    {
+      "id": "TASK-002",
+      "title": "Implement Storage and Persistence Module",
+      "description": "Create storage.js to handle reading and writing projects and tasks to localStorage, plus session storage handling for the API key.",
+      "userStories": [
+        "As a user, I want my projects and manual edits to persist after page reload so that I do not lose my data."
+      ],
+      "acceptanceCriteria": [
+        "Projects can be saved and retrieved from localStorage.",
+        "API key is correctly stored and retrieved from sessionStorage.",
+        "Helper functions handle missing or corrupted storage gracefully."
+      ],
+      "priority": "High",
+      "importance": "High",
+      "size": "M",
+      "estimatedTime": 6,
+      "deadline": "Day 1",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-001"
+      ]
+    },
+    {
+      "id": "TASK-003",
+      "title": "Build AI Settings Modal and Demo Mode",
+      "description": "Develop the AI settings modal accessible from the header, allowing API key input and a Demo Mode button that fetches data/sample-plan.json.",
+      "userStories": [
+        "As a user, I want to input my API key or use demo mode so that I can generate plans or test the app without an API key."
+      ],
+      "acceptanceCriteria": [
+        "Settings modal opens and closes from header navigation.",
+        "API key is saved in sessionStorage.",
+        "Demo Mode button fetches sample-plan.json successfully via GET."
+      ],
+      "priority": "High",
+      "importance": "High",
+      "size": "M",
+      "estimatedTime": 5,
+      "deadline": "Day 2",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-004",
+      "title": "Implement Dashboard Layout and Project Cards",
+      "description": "Build the dashboard view (index.html) displaying project cards with progress bars, task counts, and navigation links, managed exclusively through ui.js.",
+      "userStories": [
+        "As a user, I want to see a list of my projects with progress indicators so that I can monitor their status at a glance."
+      ],
+      "acceptanceCriteria": [
+        "Dashboard displays all stored projects as cards.",
+        "Each card shows title, description, total tasks, completed tasks, remaining tasks, and a progress bar.",
+        "Empty state is shown when no projects exist."
+      ],
+      "priority": "High",
+      "importance": "High",
+      "size": "M",
+      "estimatedTime": 6,
+      "deadline": "Day 3",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-005",
+      "title": "Implement Project Deletion with Confirmation",
+      "description": "Add functionality to delete projects from the dashboard with a confirmation prompt and dynamic UI refresh.",
+      "userStories": [
+        "As a user, I want to delete unwanted projects so that my dashboard stays clean and organized."
+      ],
+      "acceptanceCriteria": [
+        "Clicking delete shows a confirmation dialog.",
+        "Confirming removes the project from localStorage and updates the dashboard UI.",
+        "Empty state appears if all projects are deleted."
+      ],
+      "priority": "Medium",
+      "importance": "Medium",
+      "size": "S",
+      "estimatedTime": 4,
+      "deadline": "Day 3",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-004"
+      ]
+    },
+    {
+      "id": "TASK-006",
+      "title": "Build New Project Form and Real-time Validation",
+      "description": "Create new-project.html form with inputs for name, description, brief, duration, developers, technologies, and difficulty level, implementing real-time regex validation.",
+      "userStories": [
+        "As a user, I want form validation with error messages so that I enter valid project parameters before generating a plan."
+      ],
+      "acceptanceCriteria": [
+        "Real-time validation via input and submit events using regular expressions.",
+        "Error messages appear under invalid fields and submit button remains disabled while form is invalid.",
+        "Duration and developers must be integers >= 1."
+      ],
+      "priority": "High",
+      "importance": "High",
+      "size": "M",
+      "estimatedTime": 6,
+      "deadline": "Day 4",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-001"
+      ]
+    },
+    {
+      "id": "TASK-007",
+      "title": "Implement Prompt Generation and API Communication",
+      "description": "Develop prompt.js with buildPrompt(project) using template literals, and api.js to send the prompt to the AI endpoint and handle generation states.",
+      "userStories": [
+        "As a user, I want the app to communicate with the AI using my project details so that I receive a tailored development plan."
+      ],
+      "acceptanceCriteria": [
+        "buildPrompt correctly interpolates project parameters into the mandatory prompt template.",
+        "API module handles request submission with loading spinner and disables double-submission.",
+        "Errors are caught and displayed clearly with a retry button."
+      ],
+      "priority": "Critical",
+      "importance": "High",
+      "size": "M",
+      "estimatedTime": 6,
+      "deadline": "Day 5",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-003",
+        "TASK-006"
+      ]
+    },
+    {
+      "id": "TASK-008",
+      "title": "Parser and Validation Guard for AI Response",
+      "description": "Implement response parsing and strict validation ensuring required fields, allowed values, existing dependencies, and valid deadlines within project duration.",
+      "userStories": [
+        "As a developer, I want to parse and validate AI-generated plans so that corrupt or invalid data never breaks the application."
+      ],
+      "acceptanceCriteria": [
+        "AI response is parsed and checked for required fields and allowed values.",
+        "Dependencies are verified against existing task IDs without circular references.",
+        "Task deadlines are checked to ensure they do not exceed project duration."
+      ],
+      "priority": "Critical",
+      "importance": "High",
+      "size": "M",
+      "estimatedTime": 5,
+      "deadline": "Day 6",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-007"
+      ]
+    },
+    {
+      "id": "TASK-009",
+      "title": "Build Task Board and Kanban Interface",
+      "description": "Develop project.html interface showing project summary, capacity calculations, and a three-column Kanban board (To Do, In Progress, Done) with task cards.",
+      "userStories": [
+        "As a user, I want to view my project tasks on a Kanban board so that I can track workflow progression."
+      ],
+      "acceptanceCriteria": [
+        "Project summary displays name, duration, team, estimated hours vs capacity, and progression.",
+        "Kanban board displays To Do, In Progress, and Done columns.",
+        "Task cards show ID, title, priority, size, estimated time, deadline, and dependencies."
+      ],
+      "priority": "High",
+      "importance": "High",
+      "size": "M",
+      "estimatedTime": 5,
+      "deadline": "Day 7",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-004",
+        "TASK-008"
+      ]
+    },
+    {
+      "id": "TASK-010",
+      "title": "Implement Task Detail Modal and Manual Editing",
+      "description": "Build modal for viewing and editing task properties (title, description, priority, size, deadline, status) and task deletion with confirmation.",
+      "userStories": [
+        "As a user, I want to view and edit task details in a modal so that I can keep task information up to date."
+      ],
+      "acceptanceCriteria": [
+        "Clicking a task card opens the modal with full details.",
+        "Manual edits to task fields are saved and persist after page reload.",
+        "Task deletion includes a confirmation prompt and removes the task from other tasks' dependency lists."
+      ],
+      "priority": "High",
+      "importance": "High",
+      "size": "M",
+      "estimatedTime": 5,
+      "deadline": "Day 8",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-009"
+      ]
+    },
+    {
+      "id": "TASK-011",
+      "title": "Implement Business Rules for Task Status and Progress",
+      "description": "Enforce business logic preventing a task from passing to Done if any dependency is not Done, and compute project progression exclusively from task statuses.",
+      "userStories": [
+        "As a user, I want dependency validation on task status changes so that tasks are completed in the correct order."
+      ],
+      "acceptanceCriteria": [
+        "Moving a task to Done is blocked with an explanation message if any dependency is not Done.",
+        "Project progress percentage is accurately calculated as (Done tasks / total tasks) * 100 based strictly on statuses."
+      ],
+      "priority": "Critical",
+      "importance": "High",
+      "size": "S",
+      "estimatedTime": 4,
+      "deadline": "Day 9",
+      "status": "To Do",
+      "dependencies": [
+        "TASK-010"
+      ]
+    }
+  ]
+}
+

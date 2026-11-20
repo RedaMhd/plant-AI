@@ -66,41 +66,115 @@
             </button>
         </div>
     </header>
-    <main class="min-h-[90vh] flex p-2">
-
+    <main class="min-h-[90vh] flex p-2 ">
+        <div class="absolute w-full backdrop-blur-xs h-full flex hidden chargement">
+            <div class="m-auto bg-blue-200 min-w-[40%] text-center text-3xl rounded-2xl">
+                Chargement ...
+            </div>
+        </div>
         <form data-parsley-validate action=""
             class="bg-black rounded-2xl text-gray-300 w-[95%] mx-auto p-2 flex flex-wrap gap-1 lg:gap-0 lg:max-w-[50%] lg:px-[10%] new-project">
             <h2 class="mx-auto font-black text-amber-500 lg:w-[90%] text-center">Créer un nouveau projet</h2>
 
-            <label class=" w-[95%] lg:w-[90%] mt-4" for="nom">Nom du projet :</label>
-            <input class="feild w-[95%] lg:w-[65%] bg-white text-blue-900 rounded-xl ml-[20%]" type="text" id="nom"
+            <label class=" w-[95%] lg:w-[90%] mt-4" for="nom"  >Nom du projet :</label>
+            <input value="plant AI" class="feild w-[95%] lg:w-[65%] bg-white text-blue-900 rounded-xl ml-[20%]" type="text" id="nom"
                 name="nom" placeholder="Ex: Task Management App" required>
             <p class="onError-nom text-red-500 w-full border-t hidden"></p>
 
             <label class=" w-[95%] lg:w-[90%] mt-4" for="desc">Description :</label>
             <textarea class="feild w-[95%] lg:w-[65%] bg-white text-blue-900 rounded-xl ml-[20%]" id="desc" name="desc"
                 placeholder="Une description du projet..." required>
+                PlanIt AI, éditeur d'outils de productivité pour les équipes de développement
             </textarea>
             <p class="onError-desc text-red-500 w-full border-t hidden"></p>
 
             <label class=" w-[95%] lg:w-[90%] mt-4" for="brief">Brief complet :</label>
             <textarea class="feild w-[95%] lg:w-[65%] bg-white text-blue-900 rounded-xl ml-[20%]" id="brief"
                 name="brief" required>
+                Dashboard (index.html)
+Header : logo PLANIT AI, navigation (Dashboard, Nouveau projet) et accès aux Paramètres IA (saisie de la clé API).
+Liste des projets sous forme de cartes : nom, description, nombre total de tâches, tâches terminées, tâches restantes, pourcentage d'avancement (barre de progression).
+Bouton « Nouveau projet » et accès au Task Board d'un projet.
+Suppression d'un projet avec confirmation. État vide : « Aucun projet pour le moment, créez-en un pour générer votre premier plan. »
+Création de projet (new-project.html)
+Formulaire : nom du projet, description, brief complet (textarea), durée (en jours), nombre de développeurs, technologies, niveau de difficulté (select : Beginner / Intermediate / Advanced).
+Validation en temps réel (événements input et submit, expressions régulières) : champs obligatoires, durée et nombre de développeurs entiers ≥ 1, une message d'erreur s'affiche sous chaque champ, (le bouton d'envoie doit rester désactivé tant que le formulaire est invalide).
+Bouton « Générer le plan de développement » : construit le prompt, l'envoie à l'API et lance la génération.
+Panneau d'état de la génération : idle (prêt), loading (spinner + bouton désactivé pour éviter les doubles envois), success (redirection vers le Task Board), error (message clair + bouton « Réessayer »). L'application ne doit jamais rester bloquée.
+Task Board (project.html?id=...)
+Résumé du projet : nom, durée, équipe, heures estimées / capacité, progression.
+Tableau Kanban en trois colonnes : To Do / In Progress / Done.
+Carte de tâche : ID, titre, badge de priorité, badge de taille, temps estimé, deadline, dépendances.
+Clic sur une carte : ouverture du détail.
+Détail et gestion d'une tâche (modal)
+Consultation : description, user stories, critères d'acceptation, priorité, importance, taille, temps estimé, deadline, statut, dépendances.
+Modification : titre, description, priorité, taille, deadline, statut. Suppression avec confirmation.
+Paramètres IA (modal accessible depuis le header)
+Champ de saisie de la clé API (type password), enregistrée dans sessionStorage uniquement.
+Bouton « Mode démo » : charge data/sample-plan.json avec Fetch (GET) pour travailler sans appeler l'IA.
+Règles de gestion
+La progression d'un projet = tâches Done / total des tâches, calculée à partir des statuts uniquement.
+Une tâche ne peut pas passer à Done si l'une de ses dépendances n'est pas Done : un message l'explique.
+Supprimer une tâche la retire aussi des dépendances des autres tâches.
+Le plan reçu de l'IA n'est jamais affiché tel quel : il est d'abord parsé puis validé (champs obligatoires, valeurs autorisées, dépendances existantes, deadlines dans la durée du projet).
+Les modifications manuelles d'une tâche sont conservées après rechargement de la page.
+Modèle de données d'une tâche
+id : identifiant unique dans le projet (TASK-001, TASK-002...)
+title : titre clair et précis
+description : explication détaillée du travail à réaliser
+userStories : tableau de besoins du point de vue de l'utilisateur
+acceptanceCriteria : tableau de conditions testables permettant de valider la tâche
+priority : Low, Medium, High, Critical
+importance : Low, Medium, High
+size : XS, S, M, L, XL
+estimatedTime : temps estimé en heures (nombre)
+deadline : jour prévu pour terminer la tâche (Day 1, Day 2...)
+status : To Do, In Progress, Done
+dependencies : tableau des IDs des tâches à terminer avant celle-ci (vide s'il n'y en a pas)
+Exemple de tâche :
+
+{
+"id": "TASK-001",
+"title": "Create the task board interface",
+"description": "Build the three-column board (To Do, In Progress, Done) and the task cards.",
+"userStories": ["As a user, I want to see my tasks in a board so that I can follow the progress of my project."],
+"acceptanceCriteria": ["The three columns are displayed.", "Each card shows the title, priority, size and deadline.", "The layout is usable on mobile."],
+"priority": "High",
+"importance": "High",
+"size": "M",
+"estimatedTime": 6,
+"deadline": "Day 2",
+"status": "To Do",
+"dependencies": []
+}
+Prompt obligatoire à envoyer à l'IA
+Le prompt dans ressources doit être intégré dans prompt.js, sous la forme d'une fonction buildPrompt(project) qui utilise un template literal. Les informations entre crochets sont remplacées dynamiquement par les valeurs du formulaire avant l'envoi. Vous ne modifiez pas le contenu du prompt : votre travail est de l'envoyer correctement et d'exploiter la réponse.
+
+Modularisation du code JavaScript avec les modules ES6
+Appliquer cette organisation à PLANIT AI en séparant l'affichage, l'état de l'application, la communication avec l'API, la persistance et les fonctions utilitaires. Un fichier = une responsabilité.
+
+Charger le point d'entrée avec <script type="module" src="js/main.js"></script> dans chaque page HTML (un seul script par page).
+Utiliser export (exports nommés) et import pour partager les fonctions entre les fichiers. Aucune variable globale partagée, aucun onclick dans le HTML.
+Seul ui.js manipule le DOM 
+Modalités pédagogiques
+Vous disposez de 9 jours en autonomie pour réaliser le brief en utilisant les technologies appropriées.
+
+
             </textarea>
             <p class="onError-brief text-red-500 w-full border-t hidden"></p>
 
             <label class=" w-[95%] lg:w-[90%] mt-4" for="duree">Durée :</label>
-            <input class="feild w-[95%] lg:w-[65%] bg-white text-blue-900 rounded-xl ml-[20%]" type="number" id="duree"
+            <input value="9" class="feild w-[95%] lg:w-[65%] bg-white text-blue-900 rounded-xl ml-[20%]" type="number" id="duree"
                 name="duree" min="1" placeholder="Ex: 30" required>
             <p class="onError-duree text-red-500 w-full border-t hidden"></p>
 
             <label class=" w-[95%] lg:w-[90%] mt-4" for="nbrDev">Nombre de développeurs :</label>
-            <input class="feild w-[95%] lg:w-[65%] bg-white text-blue-900 rounded-xl ml-[20%]" type="number" id="nbrDev"
+            <input value="1" class="feild w-[95%] lg:w-[65%] bg-white text-blue-900 rounded-xl ml-[20%]" type="number" id="nbrDev"
                 name="nbrDev" min="1" placeholder="Ex: 3" required>
             <p class="onError-nbrDev text-red-500 w-full border-t hidden"></p>
 
             <label class=" w-[95%] lg:w-[90%] mt-4" for="tech">Technologies :</label>
-            <input class="feild w-[95%] lg:w-[65%] bg-white text-blue-900 rounded-xl ml-[20%]" type="text" id="tech"
+            <input value="html css js" class="feild w-[95%] lg:w-[65%] bg-white text-blue-900 rounded-xl ml-[20%]" type="text" id="tech"
                 name="tech" required>
             <p class="onError-tech text-red-500 w-full border-t hidden"></p>
 
@@ -109,7 +183,7 @@
                 name="diff" required>
                 <option value="">Choisir un niveau</option>
                 <option value="beginner">Beginner</option>
-                <option value="intermediate">Intermediate</option>
+                <option value="intermediate" selected>Intermediate</option>
                 <option value="advanced">Advanced</option>
             </select>
             <p class="onError-diff text-red-500 w-full border-t hidden"></p>
