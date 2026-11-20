@@ -37,7 +37,7 @@ export function parametre_AI() {
     btn_demo.className = "bg-gray-200 text-blue-950 rounded-xl w-[40%]";
     input.type = 'password';
 
-    const formP = $(form).parsley();
+    // const formP = $(form).parsley();
 
     label.textContent = 'AI- API key';
     label.htmlFor = 'api';
